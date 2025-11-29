@@ -377,18 +377,6 @@ class Author_Social_Links_Widget extends Widget_Base {
         );
 
         $this->add_responsive_control(
-            'image_spacing',
-            [
-                'label' => __('Image Spacing', 'pnncle-widget'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .pnncle-author-avatar' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
             'image_gap',
             [
                 'label' => __('Space Between', 'pnncle-widget'),
