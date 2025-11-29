@@ -1,0 +1,181 @@
+/**
+ * Author Social Links Widget Styles
+ */
+
+.pnncle-author-social-widget {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.pnncle-author-info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.pnncle-author-avatar {
+    flex-shrink: 0;
+    width: auto;
+}
+
+.pnncle-author-avatar img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Image Shape Styles */
+.pnncle-image-shape-square img {
+    border-radius: 0;
+}
+
+.pnncle-image-shape-circle img {
+    border-radius: 50%;
+}
+
+.pnncle-image-shape-rounded img {
+    border-radius: 8px;
+}
+
+/* .pnncle-image-shape-custom - Border radius controlled by Elementor custom border radius control */
+
+.pnncle-author-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pnncle-author-name {
+    margin: 0 0 8px 0;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.pnncle-author-bio {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.pnncle-label-above-social {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.pnncle-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.pnncle-social-links.horizontal {
+    flex-direction: row;
+}
+
+.pnncle-social-links.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pnncle-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.pnncle-social-link i,
+.pnncle-social-link svg {
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.pnncle-social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pnncle-social-text {
+    font-size: 0.9em;
+}
+
+/* Platform-specific colors (can be overridden by Elementor controls) */
+.pnncle-social-twitter {
+    color: #1DA1F2;
+}
+
+.pnncle-social-facebook {
+    color: #1877F2;
+}
+
+.pnncle-social-instagram {
+    color: #E4405F;
+}
+
+.pnncle-social-linkedin {
+    color: #0077B5;
+}
+
+.pnncle-social-youtube {
+    color: #FF0000;
+}
+
+.pnncle-social-pinterest {
+    color: #BD081C;
+}
+
+.pnncle-social-tiktok {
+    color: #000000;
+}
+
+.pnncle-social-website {
+    color: #333333;
+}
+
+.pnncle-social-threads {
+    color: #000000;
+}
+
+.pnncle-no-links {
+    padding: 15px;
+    background: #f0f0f0;
+    border-left: 4px solid #0073aa;
+    color: #333;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pnncle-author-social-widget {
+        flex-direction: column;
+    }
+    
+    .pnncle-author-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pnncle-author-avatar {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .pnncle-author-details {
+        width: 100%;
+    }
+}
+
