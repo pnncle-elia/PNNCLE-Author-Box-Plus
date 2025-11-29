@@ -126,11 +126,14 @@ final class PNNCLE_Author_Social_Widget {
      * Register Widget Scripts
      */
     public function register_widget_scripts() {
+        $js_file = PNNCLE_WIDGET_PATH . 'assets/js/widget.js';
+        $version = file_exists($js_file) ? filemtime($js_file) : self::VERSION;
+        
         wp_register_script(
             'pnncle-author-social-widget',
             PNNCLE_WIDGET_URL . 'assets/js/widget.js',
             ['jquery'],
-            self::VERSION,
+            $version,
             true
         );
     }
@@ -139,11 +142,14 @@ final class PNNCLE_Author_Social_Widget {
      * Register Widget Styles
      */
     public function register_widget_styles() {
+        $css_file = PNNCLE_WIDGET_PATH . 'assets/css/widget.css';
+        $version = file_exists($css_file) ? filemtime($css_file) : self::VERSION;
+        
         wp_register_style(
             'pnncle-author-social-widget',
             PNNCLE_WIDGET_URL . 'assets/css/widget.css',
             [],
-            self::VERSION
+            $version
         );
     }
 

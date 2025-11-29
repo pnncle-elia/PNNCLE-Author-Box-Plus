@@ -81,29 +81,6 @@ class Author_Social_Links_Widget extends Widget_Base {
         );
 
         $this->add_control(
-            'avatar_size',
-            [
-                'label' => __('Image Size', 'pnncle-widget'),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range' => [
-                    'px' => [
-                        'min' => 40,
-                        'max' => 300,
-                        'step' => 5,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 100,
-                ],
-                'condition' => [
-                    'show_avatar' => 'yes',
-                ],
-            ]
-        );
-
-        $this->add_control(
             'author_name',
             [
                 'label' => __('Author Name Format', 'pnncle-widget'),
@@ -279,12 +256,29 @@ class Author_Social_Links_Widget extends Widget_Base {
         $this->add_responsive_control(
             'name_spacing',
             [
-                'label' => __('Spacing', 'pnncle-widget'),
-                'type' => Controls_Manager::DIMENSIONS,
+                'label' => __('Space Between', 'pnncle-widget'),
+                'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .pnncle-author-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 3,
+                        'step' => 0.1,
+                    ],
                 ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 8,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .pnncle-author-name' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+                'description' => __('Controls the space between the author name and bio.', 'pnncle-widget'),
             ]
         );
 
@@ -300,6 +294,37 @@ class Author_Social_Links_Widget extends Widget_Base {
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_avatar' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'avatar_size',
+            [
+                'label' => __('Image Size', 'pnncle-widget'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 40,
+                        'max' => 300,
+                        'step' => 5,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 100,
+                ],
+                'tablet_default' => [
+                    'unit' => 'px',
+                    'size' => 100,
+                ],
+                'mobile_default' => [
+                    'unit' => 'px',
+                    'size' => 100,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .pnncle-author-avatar img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}}; height: auto;',
                 ],
             ]
         );
@@ -366,7 +391,7 @@ class Author_Social_Links_Widget extends Widget_Base {
         $this->add_responsive_control(
             'image_gap',
             [
-                'label' => __('Gap Between Image and Content', 'pnncle-widget'),
+                'label' => __('Space Between', 'pnncle-widget'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -389,6 +414,33 @@ class Author_Social_Links_Widget extends Widget_Base {
                     '{{WRAPPER}} .pnncle-author-info' => 'gap: {{SIZE}}{{UNIT}};',
                 ],
                 'description' => __('Controls the space between the author image and the content column.', 'pnncle-widget'),
+            ]
+        );
+
+        $this->add_responsive_control(
+            'image_vertical_align',
+            [
+                'label' => __('Vertical Alignment', 'pnncle-widget'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'flex-start' => [
+                        'title' => __('Top', 'pnncle-widget'),
+                        'icon' => 'eicon-v-align-top',
+                    ],
+                    'center' => [
+                        'title' => __('Middle', 'pnncle-widget'),
+                        'icon' => 'eicon-v-align-middle',
+                    ],
+                    'flex-end' => [
+                        'title' => __('Bottom', 'pnncle-widget'),
+                        'icon' => 'eicon-v-align-bottom',
+                    ],
+                ],
+                'default' => 'flex-start',
+                'selectors' => [
+                    '{{WRAPPER}} .pnncle-author-info' => 'align-items: {{VALUE}};',
+                ],
+                'description' => __('Align the image vertically relative to the content.', 'pnncle-widget'),
             ]
         );
 
@@ -422,18 +474,6 @@ class Author_Social_Links_Widget extends Widget_Base {
             [
                 'name' => 'bio_typography',
                 'selector' => '{{WRAPPER}} .pnncle-author-bio',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'bio_spacing',
-            [
-                'label' => __('Spacing', 'pnncle-widget'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .pnncle-author-bio' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
             ]
         );
 
@@ -491,11 +531,27 @@ class Author_Social_Links_Widget extends Widget_Base {
         $this->add_responsive_control(
             'social_label_spacing',
             [
-                'label' => __('Label Spacing', 'pnncle-widget'),
-                'type' => Controls_Manager::DIMENSIONS,
+                'label' => __('Space Between', 'pnncle-widget'),
+                'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 3,
+                        'step' => 0.1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 10,
+                ],
                 'selectors' => [
-                    '{{WRAPPER}} .pnncle-label-above-social' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .pnncle-label-above-social' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -722,20 +778,24 @@ class Author_Social_Links_Widget extends Widget_Base {
         // Get custom author image or fallback to avatar
         $author_image_html = '';
         $custom_image_id = get_user_meta($author_id, 'pnncle_author_image', true);
-        $avatar_size = isset($settings['avatar_size']['size']) && is_numeric($settings['avatar_size']['size']) 
-            ? absint($settings['avatar_size']['size']) 
-            : 100;
+        
+        // Get avatar size - use desktop size for image generation, CSS handles responsive sizing
+        $avatar_size = 100; // Default
+        if (isset($settings['avatar_size']['size']) && is_numeric($settings['avatar_size']['size'])) {
+            $avatar_size = absint($settings['avatar_size']['size']);
+        } elseif (isset($settings['avatar_size']) && is_array($settings['avatar_size']) && isset($settings['avatar_size']['size'])) {
+            $avatar_size = absint($settings['avatar_size']['size']);
+        }
         
         if ($custom_image_id && $settings['show_avatar'] === 'yes') {
             // Use wp_get_attachment_image for proper image handling
-            // $avatar_size is already validated with absint(), safe for CSS
+            // Size is handled by Elementor CSS via responsive control selectors
             $author_image_html = wp_get_attachment_image(
                 $custom_image_id,
                 [$avatar_size, $avatar_size],
                 false,
                 [
                     'alt' => esc_attr($author_name),
-                    'style' => 'max-width: ' . absint($avatar_size) . 'px; height: auto;',
                 ]
             );
         } elseif ($settings['show_avatar'] === 'yes') {

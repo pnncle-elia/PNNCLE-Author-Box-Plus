@@ -106,6 +106,17 @@
 - ✅ Strict comparison (`===`)
 - ✅ Safe default (square)
 
+**Image Vertical Alignment:**
+- ✅ Uses Elementor CHOOSE control with predefined options
+- ✅ Values: `['flex-start', 'center', 'flex-end']` (whitelisted)
+- ✅ Used only in CSS selectors via Elementor's secure template system
+- ✅ No direct PHP usage, handled by Elementor framework
+
+**Responsive Controls:**
+- ✅ Avatar size uses `absint()` for validation
+- ✅ All responsive values checked with `isset()` and type validation
+- ✅ Safe defaults provided for all breakpoints
+
 **Social Media Fields (Including Threads):**
 - ✅ All URL fields use `esc_url_raw()` for sanitization
 - ✅ `filter_var(FILTER_VALIDATE_URL)` validation before saving
@@ -248,6 +259,14 @@ This plugin complies with:
 - ✅ Threads field properly integrated with URL validation and sanitization
 - ✅ Simplified social media field descriptions (removed "e.g.", kept URL examples)
 - ✅ All new social network fields properly secured
+- ✅ Added responsive image size controls (Desktop/Tablet/Mobile)
+- ✅ Added vertical alignment control for author image (Top/Middle/Bottom)
+- ✅ Updated CSS/JS cache-busting using file modification time
+- ✅ Improved CSS selector specificity for image shapes
+- ✅ Removed redundant bio spacing control, kept padding only
+- ✅ Changed spacing controls to single gap values (SLIDER instead of DIMENSIONS)
+- ✅ Moved image size control from Content to Style tab (Elementor best practices)
+- ✅ Renamed all spacing controls to "Space Between" for consistency
 
 ## Conclusion
 
@@ -265,6 +284,20 @@ All security measures are in place. All features (HTML tag selection, image shap
 - ✅ Validated with `filter_var(FILTER_VALIDATE_URL)`
 - ✅ URL scheme validation (http/https only)
 - ✅ Properly escaped in output (`esc_attr()` for form values)
+
+**New Controls Security:**
+- ✅ Vertical alignment: Predefined values only, handled by Elementor
+- ✅ Social label spacing: SLIDER control, numeric values only
+- ✅ Name spacing: Changed to SLIDER control, numeric values only
+- ✅ Responsive controls: All values validated with `absint()` and type checks
+- ✅ CSS cache-busting: Uses `filemtime()` (read-only, no security risk)
+
+**Spacing Controls (SLIDER):**
+- ✅ All spacing controls use SLIDER type (numeric values only)
+- ✅ Values validated through Elementor's secure template system
+- ✅ Used only in CSS selectors via `{{SIZE}}{{UNIT}}` template
+- ✅ No direct PHP usage, handled by Elementor framework
+- ✅ Safe defaults provided for all controls
 
 No vulnerabilities found.
 

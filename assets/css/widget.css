@@ -178,5 +178,10 @@
     .pnncle-author-details {
         width: 100%;
     }
+    
+    /* Center social media icons on mobile */
+    .pnncle-social-links {
+        justify-content: center;
+    }
 }
 
