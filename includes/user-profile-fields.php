@@ -58,63 +58,63 @@ function pnncle_add_social_media_fields($user) {
             <th><label for="twitter"><?php esc_html_e('X (Twitter)', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="text" name="twitter" id="twitter" value="<?php echo esc_attr(get_the_author_meta('twitter', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your X (formerly Twitter) handle (e.g., @username) or profile URL.', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your X (formerly Twitter) handle or profile (https://x.com/username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="facebook"><?php esc_html_e('Facebook', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="facebook" id="facebook" value="<?php echo esc_attr(get_the_author_meta('facebook', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your Facebook profile URL (e.g., https://facebook.com/username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your Facebook profile (https://facebook.com/username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="instagram"><?php esc_html_e('Instagram', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="instagram" id="instagram" value="<?php echo esc_attr(get_the_author_meta('instagram', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your Instagram profile URL (e.g., https://instagram.com/username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your Instagram profile (https://instagram.com/username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="threads"><?php esc_html_e('Threads', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="threads" id="threads" value="<?php echo esc_attr(get_the_author_meta('threads', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your Threads profile URL (e.g., https://www.threads.net/@username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your Threads profile (https://www.threads.net/@username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="linkedin"><?php esc_html_e('LinkedIn', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="linkedin" id="linkedin" value="<?php echo esc_attr(get_the_author_meta('linkedin', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your LinkedIn profile URL (e.g., https://linkedin.com/in/username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your LinkedIn profile (https://linkedin.com/in/username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="youtube"><?php esc_html_e('YouTube', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="youtube" id="youtube" value="<?php echo esc_attr(get_the_author_meta('youtube', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your YouTube channel URL (e.g., https://youtube.com/@username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your YouTube channel (https://youtube.com/@username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="pinterest"><?php esc_html_e('Pinterest', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="pinterest" id="pinterest" value="<?php echo esc_attr(get_the_author_meta('pinterest', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your Pinterest profile URL (e.g., https://pinterest.com/username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your Pinterest profile (https://pinterest.com/username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="tiktok"><?php esc_html_e('TikTok', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="tiktok" id="tiktok" value="<?php echo esc_attr(get_the_author_meta('tiktok', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter your TikTok profile URL (e.g., https://tiktok.com/@username).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter your TikTok profile (https://tiktok.com/@username).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
         <tr>
             <th><label for="website_custom"><?php esc_html_e('Custom Website', 'pnncle-widget'); ?></label></th>
             <td>
                 <input type="url" name="website_custom" id="website_custom" value="<?php echo esc_attr(get_the_author_meta('website_custom', $user->ID)); ?>" class="regular-text" /><br />
-                <span class="description"><?php esc_html_e('Enter a custom website URL (e.g., https://yourwebsite.com).', 'pnncle-widget'); ?></span>
+                <span class="description"><?php esc_html_e('Enter a custom website (https://yourwebsite.com).', 'pnncle-widget'); ?></span>
             </td>
         </tr>
     </table>
