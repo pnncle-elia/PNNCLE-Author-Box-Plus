@@ -168,7 +168,9 @@ final class PNNCLE_Author_Social_Widget {
      * Admin notice
      */
     public function admin_notice_missing_main_plugin() {
-        if (isset($_GET['activate'])) unset($_GET['activate']);
+        if (isset($_GET['activate'])) {
+            unset($_GET['activate']);
+        }
 
         $message = sprintf(
             esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'pnncle-widget'),
@@ -183,7 +185,9 @@ final class PNNCLE_Author_Social_Widget {
      * Admin notice
      */
     public function admin_notice_minimum_elementor_version() {
-        if (isset($_GET['activate'])) unset($_GET['activate']);
+        if (isset($_GET['activate'])) {
+            unset($_GET['activate']);
+        }
 
         $message = sprintf(
             esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'pnncle-widget'),
@@ -199,7 +203,9 @@ final class PNNCLE_Author_Social_Widget {
      * Admin notice
      */
     public function admin_notice_minimum_php_version() {
-        if (isset($_GET['activate'])) unset($_GET['activate']);
+        if (isset($_GET['activate'])) {
+            unset($_GET['activate']);
+        }
 
         $message = sprintf(
             esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'pnncle-widget'),

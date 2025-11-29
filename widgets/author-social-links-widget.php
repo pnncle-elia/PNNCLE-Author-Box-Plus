@@ -20,6 +20,11 @@ if (!defined('ABSPATH')) {
 class Author_Social_Links_Widget extends Widget_Base {
 
     /**
+     * Default avatar size in pixels
+     */
+    private const DEFAULT_AVATAR_SIZE = 100;
+
+    /**
      * Get widget name
      */
     public function get_name() {
@@ -739,14 +744,6 @@ class Author_Social_Links_Widget extends Widget_Base {
         // Get social media links
         $social_links = $this->get_author_social_links($author_id);
 
-        // If no social links, show message or nothing
-        if (empty($social_links)) {
-            if (current_user_can('edit_posts')) {
-                echo '<p class="pnncle-no-links">' . esc_html__('No social media links found for this author. Add them in the user profile.', 'pnncle-widget') . '</p>';
-            }
-            return;
-        }
-
         // Get author name based on setting
         $author_name = '';
         switch ($settings['author_name']) {
@@ -768,7 +765,7 @@ class Author_Social_Links_Widget extends Widget_Base {
         $custom_image_id = get_user_meta($author_id, 'pnncle_author_image', true);
         
         // Get avatar size - use desktop size for image generation, CSS handles responsive sizing
-        $avatar_size = 100; // Default
+        $avatar_size = self::DEFAULT_AVATAR_SIZE;
         if (isset($settings['avatar_size']['size']) && is_numeric($settings['avatar_size']['size'])) {
             $avatar_size = absint($settings['avatar_size']['size']);
         } elseif (isset($settings['avatar_size']) && is_array($settings['avatar_size']) && isset($settings['avatar_size']['size'])) {
@@ -845,10 +842,15 @@ class Author_Social_Links_Widget extends Widget_Base {
                     <?php if ($display_name): ?>
                         <?php echo '<' . esc_attr($name_html_tag) . ' class="pnncle-author-name">' . $display_name . '</' . esc_attr($name_html_tag) . '>'; ?>
                     <?php endif; ?>
-                    <?php if ($settings['show_bio'] === 'yes'): ?>
-                        <div class="pnncle-author-bio">
-                            <?php echo wp_kses_post(get_the_author_meta('description', $author_id)); ?>
-                        </div>
+                    <?php 
+                    // Only show bio if setting is enabled AND bio content exists
+                    if ($settings['show_bio'] === 'yes'): 
+                        $author_bio = get_the_author_meta('description', $author_id);
+                        if (!empty(trim($author_bio))): ?>
+                            <div class="pnncle-author-bio">
+                                <?php echo wp_kses_post($author_bio); ?>
+                            </div>
+                        <?php endif; ?>
                     <?php endif; ?>
                     
                     <?php if (!empty($social_links)): ?>
