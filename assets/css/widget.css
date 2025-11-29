@@ -173,6 +173,14 @@
         width: 100%;
         max-width: 200px;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .pnncle-author-avatar img {
+        margin: 0 auto;
+        display: block;
     }
     
     .pnncle-author-details {
