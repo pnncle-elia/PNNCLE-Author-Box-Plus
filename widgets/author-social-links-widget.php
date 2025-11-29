@@ -865,15 +865,15 @@ class Author_Social_Links_Widget extends Widget_Base {
         foreach ($platforms as $key => $meta_key) {
             $value = get_the_author_meta($meta_key, $author_id);
             if ($value) {
-                // Format Twitter URL if needed
+                // Format X (Twitter) URL if needed
                 if ($key === 'twitter' && !filter_var($value, FILTER_VALIDATE_URL)) {
                     // Remove @ if present and sanitize username
                     $username = sanitize_user(ltrim($value, '@'), true);
                     // Only create URL if username is valid
                     if (!empty($username) && preg_match('/^[a-zA-Z0-9_]{1,15}$/', $username)) {
-                        $value = 'https://twitter.com/' . $username;
+                        $value = 'https://x.com/' . $username;
                     } else {
-                        continue; // Skip invalid Twitter username
+                        continue; // Skip invalid X username
                     }
                 }
                 

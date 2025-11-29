@@ -26,19 +26,20 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 0; /* Default: square, no border radius */
 }
 
-/* Image Shape Styles */
-.pnncle-image-shape-square img {
-    border-radius: 0;
+/* Image Shape Styles - More specific selectors to override defaults */
+.pnncle-author-avatar.pnncle-image-shape-square img {
+    border-radius: 0 !important;
 }
 
-.pnncle-image-shape-circle img {
-    border-radius: 50%;
+.pnncle-author-avatar.pnncle-image-shape-circle img {
+    border-radius: 50% !important;
 }
 
-.pnncle-image-shape-rounded img {
-    border-radius: 8px;
+.pnncle-author-avatar.pnncle-image-shape-rounded img {
+    border-radius: 8px !important;
 }
 
 /* .pnncle-image-shape-custom - Border radius controlled by Elementor custom border radius control */
