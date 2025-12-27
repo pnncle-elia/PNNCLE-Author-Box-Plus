@@ -3,7 +3,7 @@
  * Plugin Name: Author Box Plus
  * Description: A custom Elementor widget that displays author information and social media links dynamically
  * Version: 1.0.0
- * Author: Custom Development
+ * Author: PNNCLE: CODE LAB
  * Text Domain: pnncle-widget
  * Domain Path: /languages
  * Requires at least: 5.0
