@@ -4,6 +4,7 @@
  * Description: A custom Elementor widget that displays author information and social media links dynamically
  * Version: 1.0.0
  * Author: PNNCLE: CODE LAB
+ * Author URI: https://github.com/pnncle-elia/PNNCLE-Author-Box-Plus
  * Text Domain: pnncle-widget
  * Domain Path: /languages
  * Requires at least: 5.0
